@@ -1,0 +1,123 @@
+@media (min-width: 1920px) {
+  .Select {
+    position: absolute;
+    left: 1122px;
+    z-index: 12;
+    top: 170px;
+  }
+
+  .Input-Skeleton {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 73px;
+    left: 504px;
+    z-index: 10;
+  }
+
+  .Info-Main {
+    width: 416px;
+    position: fixed;
+    left: 1070px !important;
+    top: 212px !important;
+    height: 418px;
+    border-radius: 40px;
+    background: linear-gradient(145deg, #e6e6e6, #ffffff);
+    box-shadow: 35px 35px 70px #181818, -35px -35px 70px #c7c7c7;
+    overflow: auto;
+  }
+
+  .media-Info-Main {
+    position: fixed !important;
+    left: 437px !important;
+    top: 166px !important;
+  }
+
+  .back-icon {
+    position: fixed;
+    top: 130px !important;
+    left: 407px !important;
+  }
+
+  .Cart-Main .Empty-Cart img {
+    position: absolute;
+    top: 354px;
+    left: 60px;
+    width: 314px;
+  }
+
+  .Cart-Main .cart-wrapper .cart-cards-place-border {
+    width: 286px;
+    position: absolute;
+    height: 605px;
+    justify-content: center;
+    display: flex;
+    top: 100px;
+    gap: 20px;
+    overflow: auto;
+    border-radius: 10px;
+    background: #e0e0e0;
+    box-shadow: 33px 33px 66px #09b94d, -33px -33px 66px #ffffff;
+  }
+
+  .Cart-Main .cart-wrapper {
+    height: 1090px;
+  }
+
+  .Cart-Main .Empty-Cart p {
+    position: absolute;
+    left: 84px;
+    top: 338px;
+    z-index: 1;
+    color: grey;
+  }
+
+  .Cart-Main .Empty-Cart h1 {
+    position: absolute;
+    top: 259px;
+    left: 48px;
+    z-index: 1;
+  }
+
+  .buy-media {
+    position: absolute !important;
+    top: 753px !important;
+    left: 101px !important;
+  }
+
+  .Succsess-Main {
+    position: absolute;
+    z-index: 2;
+    right: 0px;
+    top: 62px;
+    width: 420px;
+    height: 800px;
+    background-color: rgb(251, 254, 252);
+    display: flex;
+    justify-content: center;
+  }
+
+  .media-succsess-button {
+    position: absolute !important;
+    top: 559px !important;
+    left: 85px;
+  }
+
+  .Succsess-Main h1 {
+    position: absolute;
+    top: 162px;
+  }
+  .Succsess-Main P {
+    font-size: 17px;
+    position: absolute;
+    top: 226px;
+    color: grey;
+  }
+
+  .Succsess-Main img {
+    position: absolute;
+    left: 88px;
+    top: 291px;
+    width: 231px;
+  }
+}

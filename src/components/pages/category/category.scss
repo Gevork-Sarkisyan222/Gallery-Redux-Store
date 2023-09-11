@@ -1,0 +1,294 @@
+.Popular-Main {
+  display: flex;
+  justify-content: center;
+
+  .popular-wrapper {
+    width: 1150px;
+    height: 1275px;
+    position: relative;
+    top: 68px;
+    border-radius: 70px;
+    background: #0092be;
+    box-shadow: inset 17px 17px 60px #e9e6e6ad, inset -17px -17px 60px #00ffc3;
+
+    h1 {
+      position: relative;
+      top: 134px;
+      font-size: 35px;
+      left: 75px;
+      color: white;
+    }
+  }
+
+  .popular-cards-render-place {
+    display: flex;
+    position: relative;
+    left: 74px;
+    top: 141px;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+}
+
+.Expensive-Main {
+  display: flex;
+  justify-content: center;
+
+  .expenisve-wrapper {
+    width: 1150px;
+    height: 1275px;
+    position: relative;
+    top: 68px;
+    border-radius: 70px;
+    background: linear-gradient(90deg, #00b6f5 0%, #2ee800 100%);
+    box-shadow: inset 17px 17px 60px #e9e6e6ad, inset -17px -17px 60px #00ffc3;
+
+    h1 {
+      position: relative;
+      top: 134px;
+      font-size: 35px;
+      left: 75px;
+      color: white;
+    }
+  }
+
+  .expensive-cards-render-place {
+    display: flex;
+    position: relative;
+    left: 74px;
+    top: 141px;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+}
+
+.Cheap-Main {
+  display: flex;
+  justify-content: center;
+
+  .cheap-wrapper {
+    width: 1150px;
+    height: 1275px;
+    position: relative;
+    top: 68px;
+    border-radius: 70px;
+    background: linear-gradient(90deg, #00ff2a 77%, #ffffff 100%);
+    box-shadow: inset 17px 17px 60px #e9e6e6ad, inset -17px -17px 60px #00ffc3;
+
+    h1 {
+      position: relative;
+      top: 134px;
+      font-size: 35px;
+      left: 75px;
+      color: white;
+    }
+  }
+
+  .cheap-cards-render-place {
+    display: flex;
+    position: relative;
+    left: 74px;
+    top: 141px;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+}
+
+.Order-Main {
+  display: flex;
+  justify-content: center;
+
+  .order-wrapper {
+    width: 1150px;
+    height: 809px;
+    position: relative;
+    top: 68px;
+    border-radius: 70px;
+    background: linear-gradient(90deg, #00b6f5 0%, #2ee800 100%);
+    box-shadow: inset 17px 17px 60px #ffffff, inset -17px -17px 60px #00ffc3;
+    z-index: 11;
+    display: flex;
+    justify-content: flex-start;
+
+    h1 {
+      color: white;
+      margin: 61px;
+      font-size: 39px;
+    }
+
+    .image-content-border {
+      width: 500px;
+      height: 500px;
+      position: absolute;
+      top: 217px;
+      left: 62px;
+      background-color: #fff;
+      border-radius: 7px;
+      border: 4px solid green;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-image: url('https://media.istockphoto.com/id/1175387759/vector/camera-icon.jpg?s=612x612&w=0&k=20&c=paC1ZkU31dH2B5epXqT_cYOyca5uqh4v0WpFUldCUBE=');
+    }
+
+    .custom-file-input-label {
+      position: absolute;
+      top: 169px;
+      left: 64px;
+      display: block;
+      margin-top: 10px;
+      cursor: pointer;
+      color: white;
+      text-decoration: underline;
+      font-size: 19px;
+      font-weight: 700;
+
+      &:hover {
+        color: rgba(255, 255, 255, 0.836);
+      }
+    }
+
+    .custom-file-input {
+      display: none;
+    }
+    .Checkbox-wrapper {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      right: 495px;
+      top: 217px;
+
+      .checkbox {
+        width: 58px;
+        height: 56px;
+        font-size: 26px;
+        color: #fff;
+        background: #24dd13;
+        border-radius: 100px;
+        box-shadow: 2px 5px 4px black;
+
+        .icon-check {
+          display: block;
+          width: 27px;
+          position: absolute;
+          left: -2px;
+          margin-top: 0px;
+          height: 27px;
+          background-image: url('https://d1nhio0ox7pgb.cloudfront.net/_img/g_collection_png/standard/512x512/checkbox.png');
+          background-size: cover;
+        }
+
+        &:not(:last-child) {
+          margin-bottom: 50px;
+        }
+
+        &:hover {
+          transition: 1s;
+          box-shadow: 2px 5px 4px white;
+        }
+      }
+      .first-checkbox-text {
+        position: absolute;
+        h2 {
+          position: absolute;
+          white-space: nowrap;
+          top: -9px;
+          font-size: 18px;
+          left: 70px;
+        }
+        p {
+          position: absolute;
+          top: 15px;
+          left: 69px;
+          color: rgb(95, 95, 95);
+          font-size: 15px;
+          white-space: nowrap;
+          font-family: Arial, Helvetica, sans-serif;
+        }
+      }
+      .second-checkbox-text {
+        position: absolute;
+        h2 {
+          position: absolute;
+          white-space: nowrap;
+          top: 97px;
+          font-size: 18px;
+          left: 70px;
+        }
+        p {
+          position: absolute;
+          top: 122px;
+          left: 69px;
+          color: rgb(95, 95, 95);
+          font-size: 15px;
+          white-space: nowrap;
+          font-family: Arial, Helvetica, sans-serif;
+        }
+      }
+      .third-checkbox-text {
+        position: absolute;
+        h2 {
+          position: absolute;
+          white-space: nowrap;
+          top: 204px;
+          font-size: 18px;
+          left: 70px;
+        }
+        p {
+          position: absolute;
+          top: 231px;
+          left: 69px;
+          color: rgb(95, 95, 95);
+          font-size: 15px;
+          white-space: nowrap;
+          font-family: Arial, Helvetica, sans-serif;
+        }
+      }
+    }
+  }
+  .Select-Border {
+    position: absolute;
+    width: 467px;
+    top: 515px;
+    right: 64px;
+    height: 128px;
+    z-index: 11;
+    background: linear-gradient(0deg, rgb(36, 221, 19) 0%, #1fffda 100%);
+    border: 2px solid white;
+    border-radius: 20px;
+
+    .Select-size {
+      position: absolute;
+      top: 35px;
+      right: 279px;
+      z-index: 10;
+    }
+    .Term-Border {
+      position: absolute;
+      top: 0px;
+      right: -227px;
+      z-index: 10;
+    }
+  }
+}
+
+.Order-Skeleton {
+  position: absolute;
+  left: 45px;
+  top: 161px;
+  z-index: 1;
+}
+
+.Text-Skeleton {
+  position: absolute;
+  z-index: 1;
+  right: 42px;
+  top: 153px;
+}
+
+.Select-Skeleton {
+  position: absolute;
+  z-index: 10;
+  right: 46px;
+  top: 538px;
+}
