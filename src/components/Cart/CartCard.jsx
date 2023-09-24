@@ -5,22 +5,22 @@ import Card from '@mui/joy/Card';
 import CardContent from '@mui/joy/CardContent';
 import Typography from '@mui/joy/Typography';
 import { useSnackbar } from 'notistack';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { minus } from '.././redux/slices/CounterCart.slice';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import { removeItem } from '.././redux/slices/HandleCart.slice';
-import { setIsCheckedFalse } from '../redux/slices/IsChecked.slice';
+import { setIsChecked } from '.././redux/slices/IsChecked.slice';
 
-function CartCard({ title, year, image, price, id, setIsChecked }) {
+function CartCard({ title, year, image, price, id }) {
   const { enqueueSnackbar } = useSnackbar();
   const dispatch = useDispatch();
+  const isChecked = useSelector((state) => state.isChecked.isChecked[id]);
 
   const handleDelete = () => {
     const userConfirmed = window.confirm('Вы действительно хотите удалить этот товар с корзины?');
 
     if (userConfirmed) {
-      // setIsChecked(false);
-      dispatch(setIsCheckedFalse({ id }));
+      dispatch(setIsChecked({ id, value: false }));
       dispatch(removeItem(id));
       enqueueSnackbar('Товар удален из корзины!', { variant: 'error' });
       dispatch(minus());

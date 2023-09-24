@@ -13,8 +13,14 @@ import { deleteCounter } from '../redux/slices/CounterCart.slice';
 function Cart() {
   const dispatch = useDispatch();
   const openSuccsess = useSelector((state) => state.openSuccsess.isOpenSuccsess);
-  const carItems = useSelector((state) => state.cartItems.items);
+  const cartItems = useSelector((state) => state.cartItems.items);
   const [openIcon, setOpenIcon] = React.useState(false);
+
+  React.useEffect(() => {
+    const json = JSON.stringify(cartItems);
+    localStorage.setItem('cart', json);
+    console.log(json);
+  }, [cartItems]);
 
   const handleBackClick = () => {
     dispatch(setFalse());
@@ -27,6 +33,7 @@ function Cart() {
       dispatch(makeOpenSuccsess());
       dispatch(setIsCheckedClearAll());
       dispatch(deleteCounter());
+      dispatch(clearItem());
     }, 1200);
   };
 
@@ -68,7 +75,7 @@ function Cart() {
             cursor: 'pointer',
           }}
         />
-        {carItems.length === 0 ? (
+        {cartItems.length === 0 ? (
           <div className="Empty-Cart">
             <h1>Ваша корзина пустая</h1>
             <p>Добавьте хотя бы парочку товаров</p>
@@ -78,7 +85,7 @@ function Cart() {
           <>
             <div className="cart-cards-place-border">
               <div className="cart-cards-render-place">
-                {carItems.map((obj) => (
+                {cartItems.map((obj) => (
                   <CartCard key={obj.id} {...obj} />
                 ))}
               </div>

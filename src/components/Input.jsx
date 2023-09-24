@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useCallback, useState } from 'react';
 import Paper from '@mui/material/Paper';
 import InputBase from '@mui/material/InputBase';
 import Divider from '@mui/material/Divider';
@@ -8,14 +8,34 @@ import SearchIcon from '@mui/icons-material/Search';
 import DirectionsIcon from '@mui/icons-material/Directions';
 import { useSelector, useDispatch } from 'react-redux';
 import { setFind } from '../components/redux/slices/Value.slice';
+import debounce from 'lodash.debounce';
 
 export default function CustomizedInputBase() {
   const findValue = useSelector((state) => state.value.find);
   const dispatch = useDispatch();
+  const [findDeboundce, setFindDebounce] = useState('');
 
-  const handleInputChange = (e) => {
-    dispatch(setFind(e.target.value));
+  const updateFindValue = useCallback(
+    debounce((str) => {
+      dispatch(setFind(str));
+    }, 200),
+    [],
+  );
+
+  const onChangeInput = (event) => {
+    setFindDebounce(event.target.value);
+    updateFindValue(event.target.value);
+    console.log(event.target);
   };
+
+  React.useEffect(() => {
+    const findJson = JSON.stringify(findValue);
+    localStorage.setItem('value', findJson);
+  }, [findValue]);
+
+  // const handleInputChange = (e) => {
+  //   dispatch(setFind(e.target.value));
+  // };
 
   return (
     <div className="Input">
@@ -26,8 +46,8 @@ export default function CustomizedInputBase() {
           <MenuIcon />
         </IconButton>
         <InputBase
-          value={findValue}
-          onChange={handleInputChange}
+          value={findDeboundce}
+          onChange={onChangeInput}
           sx={{ ml: 1, flex: 1 }}
           placeholder="Найти картинку"
           inputProps={{ 'aria-label': 'search google maps' }}

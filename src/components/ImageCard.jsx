@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import AspectRatio from '@mui/joy/AspectRatio';
 import Button from '@mui/joy/Button';
 import Card from '@mui/joy/Card';
@@ -11,27 +11,42 @@ import { plus, minus } from './redux/slices/CounterCart.slice';
 import { addItem, removeItem } from './redux/slices/HandleCart.slice';
 import { useSelector, useDispatch } from 'react-redux';
 import { SnackbarProvider, useSnackbar } from 'notistack';
-import { setIsCheckedTrue, setIsCheckedFalse } from '../components/redux/slices/IsChecked.slice';
+import {
+  setIsChecked,
+  initializeStateFromLocalStorage,
+} from '../components/redux/slices/IsChecked.slice';
 
 export default function ImageCard({ title, year, image, price, info, id, onPlus, onDelete }) {
   const [open, setOpen] = useState(false);
   const dispatch = useDispatch();
-  // const [isChecked, setIsChecked] = useState(false);
+  // const [isChecked, setIsChecked] = useState(() => {
+  //   const storedValue = localStorage.getItem(`isChecked-${id}`);
+  //   return storedValue !== null ? JSON.parse(storedValue) : false;
+  // });
+  const isChecked = useSelector((state) => state.isChecked.isChecked[id]);
   const { enqueueSnackbar } = useSnackbar();
-  const isChecked = useSelector((state) => state.isChecked[id]);
+
+  // React.useEffect(() => {
+  //   const checkedJson = JSON.stringify(isChecked);
+  //   console.log(checkedJson);
+  //   localStorage.setItem(`isChecked-${id}`, checkedJson);
+  // }, [isChecked, id]);
+
+  useEffect(() => {
+    dispatch(initializeStateFromLocalStorage());
+  }, [dispatch]);
 
   const handleChecked = () => {
-    dispatch(setIsCheckedTrue({ id }));
     // setIsChecked(true);
+    dispatch(setIsChecked({ id, value: true }));
     dispatch(plus());
-    // onPlus({ title, year, image, price, id, setIsChecked });
     const items = {
       title,
       year,
       image,
       price,
       id,
-      setIsCheckedFalse,
+      // setIsCheckedFalse,
     };
     dispatch(addItem(items));
     enqueueSnackbar('Товар добавлен в корзину!', { variant: 'success' });
@@ -41,7 +56,8 @@ export default function ImageCard({ title, year, image, price, info, id, onPlus,
 
   const handleDelete = () => {
     dispatch(minus());
-    dispatch(setIsCheckedFalse({ id }));
+
+    dispatch(setIsChecked({ id, value: false }));
     // setIsChecked(false);
     dispatch(removeItem(id));
     // onDelete();

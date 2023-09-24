@@ -83,7 +83,6 @@ const imageArray = [
 
 function Home() {
   const findValue = useSelector((state) => state.value.find);
-  // const [loading, setLoading] = useState(true);
   const isLoading = useSelector((state) => state.isLoading.isLoading);
   const dispatch = useDispatch();
 

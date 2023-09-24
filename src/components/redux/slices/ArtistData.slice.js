@@ -31,7 +31,7 @@ export const fetchArtists = createAsyncThunk('data/fetchArtists', async () => {
 
 const initialState = {
   userData: [],
-  staus: 'loading',
+  status: 'loading',
 };
 
 export const artistData = createSlice({
@@ -41,7 +41,7 @@ export const artistData = createSlice({
   extraReducers: {
     [fetchArtists.pending]: (state) => {
       console.log('загружаем данные....');
-      state.staus = 'loading';
+      state.status = 'loading';
     },
     [fetchArtists.fulfilled]: (state, action) => {
       state.userData = action.payload;

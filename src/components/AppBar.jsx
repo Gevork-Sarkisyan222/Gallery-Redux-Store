@@ -16,6 +16,11 @@ import { setTrue, setFalse } from './redux/slices/OpenCart.slice';
 export default function ButtonAppBar() {
   const count = useSelector((state) => state.counterCart.count);
 
+  React.useEffect(() => {
+    const countJson = JSON.stringify(count);
+    localStorage.setItem('count', countJson);
+  }, [count]);
+
   const dispatch = useDispatch();
 
   const handleMakeOpenCart = () => {
