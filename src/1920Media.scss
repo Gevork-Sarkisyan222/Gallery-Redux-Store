@@ -120,4 +120,29 @@
     top: 291px;
     width: 231px;
   }
+
+  .Sait-Info-Main {
+    .sait-info-wrapper {
+      width: 100%;
+      height: 1054px;
+      background-color: #fff;
+      z-index: 20;
+
+      .text-block {
+        z-index: 2;
+        width: 500px;
+        height: 500px;
+        position: absolute;
+        top: 168px;
+        left: 278px;
+      }
+    }
+    img {
+      position: absolute;
+      right: 255px;
+      z-index: 1;
+      top: 154px;
+      width: 633px;
+    }
+  }
 }

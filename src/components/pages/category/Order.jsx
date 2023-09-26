@@ -98,7 +98,7 @@ function Order() {
           onChange={handleFileUpload}
         />
         {isLoading ? (
-          <div>
+          <div className="Order-Skeletons">
             <OrderSkeleton />
             <TextSkeleton />
             <SelectSkeleton />

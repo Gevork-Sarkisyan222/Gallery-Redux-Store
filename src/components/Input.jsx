@@ -25,7 +25,6 @@ export default function CustomizedInputBase() {
   const onChangeInput = (event) => {
     setFindDebounce(event.target.value);
     updateFindValue(event.target.value);
-    console.log(event.target);
   };
 
   React.useEffect(() => {

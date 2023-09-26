@@ -12,6 +12,8 @@ import Badge from '@mui/material-next/Badge';
 import Cart from '../components/Cart/Cart';
 import { useDispatch } from 'react-redux';
 import { setTrue, setFalse } from './redux/slices/OpenCart.slice';
+import { Link } from 'react-router-dom';
+import PermContactCalendarIcon from '@mui/icons-material/PermContactCalendar';
 
 export default function ButtonAppBar() {
   const count = useSelector((state) => state.counterCart.count);
@@ -29,28 +31,27 @@ export default function ButtonAppBar() {
     document.body.style.overflow = 'hidden';
   };
 
-  // const handleMakeCloseCart = () => {
-  //   dispatch(setFalse());
-
-  //   document.body.style.overflow = 'auto';
-  // };
-
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar
         position="fixed"
         sx={{ background: 'linear-gradient(90deg, #007FFF 0%, #11FF4A 100%)' }}>
         <Toolbar>
-          <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
-            <img
-              style={{ width: '40px' }}
-              src="https://cdn-icons-png.flaticon.com/512/178/178390.png"
-            />
-          </IconButton>
+          <Link to="Gallery-Redux-Store">
+            <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
+              <img
+                style={{ width: '40px' }}
+                src="https://cdn-icons-png.flaticon.com/512/178/178390.png"
+              />
+            </IconButton>
+          </Link>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Магазин Галереи-<span style={{ color: 'yellow' }}>топ картинки здесь</span>
           </Typography>
-          <Button color="inherit" onClick={handleMakeOpenCart}>
+          <Button
+            sx={{ position: 'relative', right: '50px' }}
+            color="inherit"
+            onClick={handleMakeOpenCart}>
             <ShoppingCartIcon />
             <Badge badgeContent={count} color="success" />
           </Button>

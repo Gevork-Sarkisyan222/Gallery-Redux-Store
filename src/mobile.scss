@@ -1,0 +1,511 @@
+@media (max-width: 1325px) {
+  .Input-Skeleton {
+    display: none;
+  }
+  .Order-Skeletons {
+    display: none;
+  }
+}
+
+@media (max-width: 400px) {
+  .Home-Main {
+    width: 771px;
+    .wrapper {
+      width: 1150px;
+      height: 1946px;
+      position: relative;
+      left: 38px;
+      top: 68px;
+      border-radius: 70px;
+      background: #00e67a;
+      box-shadow: inset 17px 17px 60px #00a31b, inset -17px -17px 60px #00ffc3;
+    }
+
+    .card-main {
+      display: flex;
+      position: relative;
+      left: 69px;
+      top: 164px;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+  }
+  .Input {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 168px;
+    left: 237px;
+    z-index: 10;
+  }
+
+  .Select {
+    position: absolute;
+    left: 520px !important;
+    z-index: 12;
+    top: 152px !important;
+  }
+
+  .Input-Skeleton {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 131px;
+    left: 189px;
+    z-index: 10;
+    width: 509px;
+    display: none;
+  }
+  .Cart-Main {
+    .cart-wrapper {
+      position: absolute;
+      height: 1189px;
+      right: 0px;
+      width: 420px;
+      background: white;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .Not-Found-Input {
+    p {
+      position: absolute;
+      left: 69px;
+      top: 31px;
+      font-size: 27px;
+    }
+
+    img {
+      width: 372px;
+      top: 127px;
+      position: absolute;
+      left: 129px;
+    }
+  }
+
+  .Popular-Main {
+    width: 771px;
+    .popular-wrapper {
+      width: 1150px;
+      height: 2045px !important;
+      left: 38px;
+      top: 68px;
+
+      .popular-cards-render-place {
+        display: flex;
+        position: relative;
+        left: 74px;
+        top: 184px;
+      }
+
+      h1 {
+        position: relative;
+        top: 174px !important;
+        font-size: 35px;
+        left: 48px !important;
+      }
+    }
+  }
+
+  .Expensive-Main {
+    width: 771px;
+    .expenisve-wrapper {
+      width: 1150px;
+      height: 2045px !important;
+      left: 38px;
+      top: 68px;
+
+      h1 {
+        position: relative;
+        top: 166px !important;
+        font-size: 35px;
+        left: 48px !important;
+        color: white;
+      }
+
+      .expensive-cards-render-place {
+        display: flex;
+        position: relative;
+        left: 74px;
+        top: 184px;
+        flex-wrap: wrap;
+        gap: 40px;
+      }
+    }
+  }
+
+  .Cheap-Main {
+    width: 771px;
+
+    .cheap-wrapper {
+      width: 1150px;
+      height: 2045px !important;
+      left: 38px;
+      top: 68px;
+
+      .cheap-cards-render-place {
+        display: flex;
+        position: relative;
+        left: 74px;
+        top: 199px;
+        flex-wrap: wrap;
+        gap: 40px;
+      }
+
+      h1 {
+        position: relative;
+        top: 179px !important;
+        font-size: 28px !important;
+        left: 64px !important;
+        color: white;
+        margin-left: 60px;
+      }
+    }
+  }
+  .Order-Main {
+    width: 771px;
+
+    .Select-Border {
+      position: absolute;
+      width: 467px;
+      top: 515px !important;
+      right: 149px !important;
+    }
+
+    .order-wrapper {
+      width: 1150px;
+      height: 799px !important;
+      left: 38px;
+      top: 68px;
+      left: 4px !important;
+
+      .Checkbox-wrapper {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        right: 320px !important;
+        top: 217px !important;
+
+        p {
+          font-size: 9px !important;
+        }
+
+        h2 {
+          position: absolute;
+          white-space: nowrap;
+          top: -2px;
+          font-size: 13px !important;
+          left: 70px !important;
+        }
+      }
+
+      .image-content-border {
+        width: 299px !important;
+        height: 269px !important;
+        position: absolute;
+        top: 217px;
+        left: 62px;
+      }
+
+      h1 {
+        color: white;
+        margin: 61px;
+        font-size: 39px;
+        position: absolute;
+        top: 48px;
+      }
+    }
+  }
+
+  .Artists-Main {
+    width: 771px;
+
+    .artists-wrapper {
+      width: 1150px !important;
+      height: 1644px !important;
+      left: 38px;
+      top: 68px;
+      left: 3px;
+
+      h1 {
+        position: absolute;
+        left: 119px;
+        top: 105px;
+      }
+
+      .user-artist-content-wrapper {
+        display: flex;
+        flex-direction: row;
+        gap: 17px;
+        left: -41px;
+        flex-wrap: wrap;
+        justify-content: center;
+        position: absolute;
+        top: 207px;
+      }
+    }
+  }
+
+  .Image-Info-Main {
+    width: 787px;
+    height: 2190px;
+    left: -74px;
+    position: absolute;
+    z-index: 12;
+    top: -297px;
+
+    .back-icon {
+      position: fixed;
+      top: 117px;
+      left: 62px;
+    }
+
+    .css-4z499o-JoyCard-root {
+      width: 428px;
+      left: 82px;
+      top: 149px;
+    }
+
+    .Info-Main {
+      width: 227px;
+      position: fixed;
+      left: 565px;
+      top: 152px;
+      height: 418px;
+    }
+  }
+
+  .NotFound-Main {
+    width: 771px;
+
+    .not-found-wrapper {
+      width: 1150px;
+      height: 2045px !important;
+      left: -2px;
+      top: 68px;
+
+      h1 {
+        position: absolute;
+        top: 239px;
+        font-size: 43px;
+      }
+
+      .pencil {
+        top: 107px;
+      }
+    }
+  }
+  .Image-Info-Main {
+    width: 787px;
+    height: 2190px;
+    left: -74px;
+    position: absolute;
+    z-index: 12;
+    top: -297px;
+
+    .back-icon {
+      position: fixed;
+      top: 117px;
+      left: 62px;
+    }
+
+    .css-4z499o-JoyCard-root {
+      width: 428px;
+      left: 82px;
+      top: 149px;
+    }
+
+    .Info-Main {
+      width: 227px;
+      position: fixed;
+      left: 565px;
+      top: 152px;
+      height: 418px;
+    }
+  }
+  .Input-Skeleton {
+    display: none;
+  }
+
+  .Sait-Info-Main {
+    display: flex;
+    justify-content: center;
+    width: 766px;
+
+    .sait-info-wrapper {
+      width: 954px;
+      height: 700px;
+      background-color: #fff;
+      z-index: 20;
+
+      .text-block {
+        z-index: 2;
+        width: 500px;
+        height: 500px;
+        position: absolute;
+        top: 168px;
+        left: 38px;
+      }
+    }
+    img {
+      display: none;
+    }
+    .mobile-image {
+      display: block;
+      position: absolute;
+      width: 138px;
+      right: -325px;
+      top: 153px;
+    }
+  }
+}
+
+@media (max-width: 820px) {
+  .Home-Main {
+    width: 771px;
+
+    .wrapper {
+      width: 1150px;
+      height: 2000px;
+      left: 63px;
+    }
+  }
+
+  .Not-Found-Input {
+    p {
+      left: 75px;
+    }
+
+    img {
+      left: 127px;
+    }
+  }
+
+  .Input {
+    width: 317px !important;
+    left: 165px !important;
+  }
+
+  .Select {
+    position: absolute;
+    left: 529px;
+    z-index: 12;
+    top: 168px;
+  }
+
+  .Popular-Main {
+    width: 771px;
+
+    .popular-wrapper {
+      width: 1150px;
+      height: 2000px;
+      left: 63px;
+
+      h1 {
+        margin-left: -33px;
+      }
+    }
+  }
+  .Expensive-Main {
+    width: 771px;
+
+    .expenisve-wrapper {
+      width: 1150px;
+      height: 2000px;
+      left: 63px;
+
+      h1 {
+        padding-left: -35px;
+      }
+    }
+  }
+
+  .Cheap-Main {
+    width: 771px;
+
+    .cheap-wrapper {
+      width: 1150px;
+      height: 2000px;
+      left: 63px;
+
+      h1 {
+        padding: -65px;
+        font-weight: 100;
+        left: 12px !important;
+      }
+    }
+  }
+
+  .cart-wrapper {
+    height: 1300px !important;
+  }
+
+  .Order-Main {
+    width: 771px;
+
+    .Select-Border {
+      position: absolute;
+      width: 467px;
+      top: 515px !important;
+      right: 149px !important;
+    }
+
+    .order-wrapper {
+      width: 1150px;
+      height: 799px !important;
+      left: 38px;
+      top: 68px;
+      left: 4px !important;
+
+      .Checkbox-wrapper {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        right: 320px !important;
+        top: 217px !important;
+
+        p {
+          font-size: 9px !important;
+        }
+
+        h2 {
+          position: absolute;
+          white-space: nowrap;
+          top: -2px;
+          font-size: 13px !important;
+          left: 70px !important;
+        }
+      }
+
+      .image-content-border {
+        width: 299px !important;
+        height: 269px !important;
+        position: absolute;
+        top: 217px;
+        left: 62px;
+      }
+
+      h1 {
+        color: white;
+        margin: 61px;
+        font-size: 39px;
+        position: absolute;
+        top: 48px;
+      }
+    }
+  }
+
+  .Sait-Info-Main {
+    img {
+      display: none;
+    }
+
+    .mobile-image {
+      display: block;
+      position: absolute;
+      width: 138px;
+      margin-right: 2px;
+    }
+  }
+}
