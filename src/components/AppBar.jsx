@@ -14,6 +14,7 @@ import { useDispatch } from 'react-redux';
 import { setTrue, setFalse } from './redux/slices/OpenCart.slice';
 import { Link } from 'react-router-dom';
 import PermContactCalendarIcon from '@mui/icons-material/PermContactCalendar';
+import { useMediaQuery } from '@mui/material';
 
 export default function ButtonAppBar() {
   const count = useSelector((state) => state.counterCart.count);
@@ -31,6 +32,10 @@ export default function ButtonAppBar() {
     document.body.style.overflow = 'hidden';
   };
 
+  const isSmallScreen = useMediaQuery('(max-width:500px)');
+  const fontWeight = isSmallScreen ? 1000 : 'inherit';
+  const fontSize = isSmallScreen ? '15px' : 'inherit';
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar
@@ -45,7 +50,10 @@ export default function ButtonAppBar() {
               />
             </IconButton>
           </Link>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{ flexGrow: 1, fontWeight: fontWeight, fontSize: fontSize }}>
             Магазин Галереи-<span style={{ color: 'yellow' }}>топ картинки здесь</span>
           </Typography>
           <Button

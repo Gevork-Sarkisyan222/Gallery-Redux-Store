@@ -15,6 +15,7 @@ import {
   setIsChecked,
   initializeStateFromLocalStorage,
 } from '../components/redux/slices/IsChecked.slice';
+import { useMediaQuery } from '@mui/material';
 
 export default function ImageCard({ title, year, image, price, info, id, onPlus, onDelete }) {
   const [open, setOpen] = useState(false);
@@ -25,6 +26,9 @@ export default function ImageCard({ title, year, image, price, info, id, onPlus,
   // });
   const isChecked = useSelector((state) => state.isChecked.isChecked[id]);
   const { enqueueSnackbar } = useSnackbar();
+
+  const isSmallScreen = useMediaQuery('(max-width:550px)');
+  const cardWidth = isSmallScreen ? 190 : 270;
 
   // React.useEffect(() => {
   //   const checkedJson = JSON.stringify(isChecked);
@@ -66,7 +70,7 @@ export default function ImageCard({ title, year, image, price, info, id, onPlus,
 
   return (
     <div>
-      <Card variant="outlined" sx={{ width: 270 }}>
+      <Card variant="outlined" sx={{ width: cardWidth }}>
         <div>
           <Typography level="title-lg">{title}</Typography>
           <Typography level="body-sm">{year}</Typography>
