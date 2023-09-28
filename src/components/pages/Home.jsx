@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import '../../App.scss';
-import ImageCard from '../ImageCard';
 import { useSelector, useDispatch } from 'react-redux';
 import Skeleton from '../Skeleton';
 import { setIsLoading } from '../redux/slices/isLoading.slice';
+import ImageCard from '../ImageCard';
+import MobileSkeletons from '../MobileSkeletons';
 
 const imageArray = [
   {
@@ -105,12 +106,21 @@ function Home() {
     skeletons.push(<Skeleton key={i} />);
   }
 
+  let mobileSkeletons = [];
+  for (let i = 0; i < 9; i++) {
+    mobileSkeletons.push(<MobileSkeletons key={i} />);
+  }
+
   return (
     <div className="Home-Main">
       <div className="wrapper">
         <div className="card-main">
           {isLoading ? (
-            skeletons
+            window.innerWidth <= 650 ? (
+              mobileSkeletons
+            ) : (
+              skeletons
+            )
           ) : filteredImages.length === 0 ? (
             <div className="Not-Found-Input">
               <img

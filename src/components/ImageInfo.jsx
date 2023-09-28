@@ -7,6 +7,7 @@ import IconButton from '@mui/joy/IconButton';
 import Typography from '@mui/joy/Typography';
 import BookmarkAdd from '@mui/icons-material/BookmarkAddOutlined';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
+import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 
 function ImageInfo({ title, image, year, price, info }) {
   return (
@@ -45,7 +46,8 @@ function ImageInfo({ title, image, year, price, info }) {
             color="primary"
             aria-label="Explore Bahamas Islands"
             sx={{ ml: 'auto', alignSelf: 'center', fontWeight: 600 }}>
-            читать информацию <ArrowRightAltIcon />
+            читать информацию{' '}
+            {window.innerWidth <= 650 ? <ArrowUpwardIcon /> : <ArrowRightAltIcon />}
           </Button>
         </CardContent>
       </Card>

@@ -4,6 +4,7 @@ import ImageCard from '../../../components/ImageCard';
 import { useSelector, useDispatch } from 'react-redux';
 import { setIsLoading } from '../../redux/slices/isLoading.slice';
 import Skeleton from '../../Skeleton';
+import MobileSkeleton from '../../MobileSkeletons';
 
 const imageArray = [
   {
@@ -101,6 +102,11 @@ function Cheap() {
     skeletons.push(<Skeleton key={i} />);
   }
 
+  let mobileSkeletons = [];
+  for (let i = 0; i < 9; i++) {
+    mobileSkeletons.push(<MobileSkeleton key={i} />);
+  }
+
   const isLoading = useSelector((state) => state.isLoading.isLoading);
   const findValue = useSelector((state) => state.value.find);
 
@@ -114,7 +120,11 @@ function Cheap() {
         <h1>Самые бюджетные картинки 2023✅🖌️☑️🖌️✅</h1>
         <section className="cheap-cards-render-place">
           {isLoading ? (
-            skeletons
+            window.innerWidth <= 650 ? (
+              mobileSkeletons
+            ) : (
+              skeletons
+            )
           ) : filteredImages.length === 0 ? (
             <div className="Not-Found-Input">
               <img

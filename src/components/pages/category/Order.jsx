@@ -7,8 +7,11 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Button from '@mui/material/Button';
 import OrderSkeleton from './order-skeletons/OrderSkeleton';
+import OrderMobileSkeleton from './order-mobile-skeletons/OrderMobileSkeleton';
 import TextSkeleton from './order-skeletons/TextSkeleton';
+import TextMobileSkeleton from './order-mobile-skeletons/TextMobileSkeleton';
 import SelectSkeleton from './order-skeletons/SelectSkeleton';
+import ButtonSkeleton from './order-mobile-skeletons/ButtonSkeleton';
 
 function Order() {
   const [age, setAge] = React.useState('');
@@ -98,11 +101,19 @@ function Order() {
           onChange={handleFileUpload}
         />
         {isLoading ? (
-          <div className="Order-Skeletons">
-            <OrderSkeleton />
-            <TextSkeleton />
-            <SelectSkeleton />
-          </div>
+          window.innerWidth <= 650 ? (
+            <div>
+              <OrderMobileSkeleton />
+              <TextMobileSkeleton />
+              <ButtonSkeleton />
+            </div>
+          ) : (
+            <div className="Order-Skeletons">
+              <OrderSkeleton />
+              <TextSkeleton />
+              <SelectSkeleton />
+            </div>
+          )
         ) : (
           <>
             <div>
@@ -134,7 +145,7 @@ function Order() {
             </div>
             <div className="Select-Border">
               <div className="Select-size">
-                <Box sx={{ minWidth: 160 }}>
+                <Box className="select-first-input" sx={{ minWidth: 160 }}>
                   <FormControl fullWidth>
                     <InputLabel id="demo-simple-select-label">Размер</InputLabel>
                     <Select
