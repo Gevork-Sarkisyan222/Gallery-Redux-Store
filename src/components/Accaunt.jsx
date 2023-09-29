@@ -49,7 +49,9 @@ function Accaunt() {
                 resize: 'horizontal',
                 '--icon-size': '100px',
               }}>
-              <CardOverflow variant="solid" color="warning">
+              <CardOverflow
+                sx={{ background: 'linear-gradient(0deg, #a0eb00 0%, #01a78a 100%)' }}
+                variant="solid">
                 <AspectRatio
                   variant="outlined"
                   color="warning"

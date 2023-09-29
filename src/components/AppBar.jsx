@@ -37,7 +37,7 @@ export default function ButtonAppBar() {
   const fontWeight = isSmallScreen ? 1000 : 'inherit';
   const fontWeight450 = isSmallScreen450 ? 700 : 'inherit';
   const fontSize = isSmallScreen ? '14px' : 'inherit';
-  const fontSize450 = isSmallScreen450 ? '19px' : 'inherit';
+  const fontSize450 = isSmallScreen450 ? '20px' : 'inherit';
   const fontSizes = isSmallScreen ? fontSize : isSmallScreen450 ? fontSize450 : 'inherit';
   const fontWeights = isSmallScreen ? fontWeight : isSmallScreen450 ? fontWeight450 : 'inherit';
 
