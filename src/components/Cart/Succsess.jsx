@@ -3,6 +3,7 @@ import Button from '@mui/material/Button';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { setFalse } from '../redux/slices/OpenCart.slice';
 import { useDispatch } from 'react-redux';
+import { useMediaQuery } from '@mui/material';
 
 function Succsess() {
   const dispatch = useDispatch();
@@ -12,6 +13,11 @@ function Succsess() {
 
     document.body.style.overflow = 'auto';
   }
+
+  const isSmallScreen = useMediaQuery('(max-width:600px)');
+  const buttonWidth = isSmallScreen ? '205px' : '261px';
+  const buttonRadius = isSmallScreen ? '25px' : '7px';
+  const buttonTop = isSmallScreen ? '392px' : '443px';
 
   return (
     <div className="Succsess-Main">
@@ -24,9 +30,9 @@ function Succsess() {
           sx={{
             height: '50px',
             marginLeft: '-4px',
-            width: '261px',
-            top: '433px',
-            borderRadius: '7px',
+            width: buttonWidth,
+            top: buttonTop,
+            borderRadius: buttonRadius,
             backgroundColor: 'rgb(90,144,1)',
             '&:hover': {
               backgroundColor: 'rgb(107,174,1)',

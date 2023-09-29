@@ -9,6 +9,7 @@ import { clearItem } from '../redux/slices/HandleCart.slice';
 import FolderDeleteIcon from '@mui/icons-material/FolderDelete';
 import { setIsCheckedClearAll } from '../redux/slices/IsChecked.slice';
 import { deleteCounter } from '../redux/slices/CounterCart.slice';
+import { useMediaQuery } from '@mui/material';
 
 function Cart() {
   const dispatch = useDispatch();
@@ -46,6 +47,11 @@ function Cart() {
       dispatch(deleteCounter());
     }
   };
+
+  const isSmallScreen = useMediaQuery('(max-width:550px)');
+  const buttonWidth = isSmallScreen ? '183px' : '218px';
+  const buttonTop = isSmallScreen ? '533px' : '570px';
+  const buttonLeft = isSmallScreen ? '33px' : 'inherit';
 
   return (
     <div className="Cart-Main">
@@ -96,11 +102,12 @@ function Cart() {
               onClick={handleBuyAllItems}
               sx={{
                 position: 'absolute',
-                top: '570px',
+                top: buttonTop,
                 height: '43px',
-                width: '218px',
+                width: buttonWidth,
                 borderRadius: '7px',
                 backgroundColor: 'rgb(75,171,255)',
+                left: buttonLeft,
               }}
               variant="contained">
               Купить

@@ -32,9 +32,14 @@ export default function ButtonAppBar() {
     document.body.style.overflow = 'hidden';
   };
 
-  const isSmallScreen = useMediaQuery('(max-width:500px)');
+  const isSmallScreen = useMediaQuery('(max-width:400px)');
+  const isSmallScreen450 = useMediaQuery('(max-width:500px)');
   const fontWeight = isSmallScreen ? 1000 : 'inherit';
-  const fontSize = isSmallScreen ? '15px' : 'inherit';
+  const fontWeight450 = isSmallScreen450 ? 700 : 'inherit';
+  const fontSize = isSmallScreen ? '14px' : 'inherit';
+  const fontSize450 = isSmallScreen450 ? '19px' : 'inherit';
+  const fontSizes = isSmallScreen ? fontSize : isSmallScreen450 ? fontSize450 : 'inherit';
+  const fontWeights = isSmallScreen ? fontWeight : isSmallScreen450 ? fontWeight450 : 'inherit';
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -53,7 +58,7 @@ export default function ButtonAppBar() {
           <Typography
             variant="h6"
             component="div"
-            sx={{ flexGrow: 1, fontWeight: fontWeight, fontSize: fontSize }}>
+            sx={{ flexGrow: 1, fontWeight: fontWeights, fontSize: fontSizes }}>
             Магазин Галереи-<span style={{ color: 'yellow' }}>топ картинки здесь</span>
           </Typography>
           <Button

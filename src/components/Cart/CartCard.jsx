@@ -10,6 +10,7 @@ import { minus } from '.././redux/slices/CounterCart.slice';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import { removeItem } from '.././redux/slices/HandleCart.slice';
 import { setIsChecked } from '.././redux/slices/IsChecked.slice';
+import { useMediaQuery } from '@mui/material';
 
 function CartCard({ title, year, image, price, id }) {
   const { enqueueSnackbar } = useSnackbar();
@@ -27,9 +28,12 @@ function CartCard({ title, year, image, price, id }) {
     }
   };
 
+  const isSmallScreen = useMediaQuery('(max-width:550px)');
+  const cardWidth = isSmallScreen ? 164 : 206;
+
   return (
     <div>
-      <Card sx={{ width: 206 }}>
+      <Card sx={{ width: cardWidth }}>
         <div>
           <Typography level="title-lg">{title}</Typography>
           <Typography level="body-sm">{year}</Typography>

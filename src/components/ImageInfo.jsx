@@ -8,8 +8,15 @@ import Typography from '@mui/joy/Typography';
 import BookmarkAdd from '@mui/icons-material/BookmarkAddOutlined';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
+import { useMediaQuery } from '@mui/material';
 
 function ImageInfo({ title, image, year, price, info }) {
+  const isSmallScreen = useMediaQuery('(max-width:900px)');
+  const contentWidth = isSmallScreen ? '281px' : '550px';
+  const contentLeft = isSmallScreen ? '34px' : '149px';
+  const typographySize = isSmallScreen ? '15px' : '30px';
+  const typographyDateSize = isSmallScreen ? '15px' : '17px';
+
   return (
     <div className="Image-Info-Main">
       <a href="/">
@@ -21,12 +28,12 @@ function ImageInfo({ title, image, year, price, info }) {
       <Card
         className="media-Info-Main"
         variant="outlined"
-        sx={{ position: 'fixed', width: 550, left: '149px', top: '149px' }}>
+        sx={{ position: 'fixed', width: contentWidth, left: contentLeft, top: '149px' }}>
         <div>
-          <Typography level="title-lg" sx={{ fontSize: '30px' }}>
+          <Typography level="title-lg" sx={{ fontSize: typographySize }}>
             {title}
           </Typography>
-          <Typography level="body-sm" sx={{ fontSize: '17px' }}>
+          <Typography level="body-sm" sx={{ fontSize: typographyDateSize }}>
             {year}
           </Typography>
         </div>
