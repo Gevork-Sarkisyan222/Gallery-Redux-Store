@@ -16,15 +16,17 @@ import {
   initializeStateFromLocalStorage,
 } from '../components/redux/slices/IsChecked.slice';
 import { useMediaQuery } from '@mui/material';
+import { setOpenInfo } from './redux/slices/OpenImageInfo.slice';
 
 export default function ImageCard({ title, year, image, price, info, id, onPlus, onDelete }) {
-  const [open, setOpen] = useState(false);
+  // const [open, setOpen] = useState(false);
   const dispatch = useDispatch();
   // const [isChecked, setIsChecked] = useState(() => {
   //   const storedValue = localStorage.getItem(`isChecked-${id}`);
   //   return storedValue !== null ? JSON.parse(storedValue) : false;
   // });
   const isChecked = useSelector((state) => state.isChecked.isChecked[id]);
+  const openInfo = useSelector((state) => state.openInfoCard.openInfo[id]);
   const { enqueueSnackbar } = useSnackbar();
 
   const isSmallScreen = useMediaQuery('(max-width:550px)');
@@ -56,8 +58,6 @@ export default function ImageCard({ title, year, image, price, info, id, onPlus,
     enqueueSnackbar('Товар добавлен в корзину!', { variant: 'success' });
   };
 
-  console.log(isChecked);
-
   const handleDelete = () => {
     dispatch(minus());
 
@@ -76,7 +76,7 @@ export default function ImageCard({ title, year, image, price, info, id, onPlus,
           <Typography level="body-sm">{year}</Typography>
         </div>
         <AspectRatio minHeight="120px" maxHeight="200px">
-          <img onClick={() => setOpen(true)} src={image} alt="" />
+          <img onClick={() => dispatch(setOpenInfo({ id }))} src={image} alt="" />
         </AspectRatio>
         <CardContent orientation="horizontal">
           <div>
@@ -106,7 +106,9 @@ export default function ImageCard({ title, year, image, price, info, id, onPlus,
           )}
         </CardContent>
       </Card>
-      {open && <ImageInfo title={title} image={image} price={price} year={year} info={info} />}
+      {openInfo && (
+        <ImageInfo title={title} image={image} price={price} year={year} info={info} id={id} />
+      )}
     </div>
   );
 }

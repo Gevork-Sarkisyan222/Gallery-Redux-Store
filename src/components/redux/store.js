@@ -7,6 +7,12 @@ import cartItems from './slices/HandleCart.slice';
 import isChecked from './slices/IsChecked.slice';
 import isLoading from './slices/isLoading.slice';
 import artistData from './slices/ArtistData.slice';
+import avatar from './slices/Avatar.slice';
+import openInfoCard from './slices/OpenImageInfo.slice';
+import nameValue from './slices/inputs/nameValue.slice';
+import surnameValue from './slices/inputs/surnameValue.slice';
+import emailValue from './slices/inputs/emailValue.slice';
+import openAccaunt from './slices/openAccaunt.slice';
 
 export const store = configureStore({
   reducer: {
@@ -18,5 +24,11 @@ export const store = configureStore({
     isChecked,
     isLoading,
     artistData,
+    avatar,
+    openInfoCard,
+    nameValue,
+    surnameValue,
+    emailValue,
+    openAccaunt,
   },
 });

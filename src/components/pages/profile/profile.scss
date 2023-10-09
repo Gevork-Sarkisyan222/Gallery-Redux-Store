@@ -1,0 +1,189 @@
+.Profile-Main {
+  display: flex;
+  justify-content: center;
+
+  .profile-wrapper {
+    z-index: 20;
+    margin-top: 30px;
+    width: 926px;
+    z-index: 11;
+    height: 470px;
+    position: relative;
+    top: 68px;
+    border-radius: 70px;
+    background: linear-gradient(0deg, #6fd2ff 0%, #a2caff 100%);
+    box-shadow: inset 17px 17px 60px #fdfffe, inset -17px -17px 60px #ffffff;
+    border: solid 3px white;
+    display: flex;
+    justify-content: flex-start;
+
+    .profile-image-input {
+      position: absolute;
+      left: 114px;
+    }
+
+    .input-description {
+      border: none;
+      background: none;
+      font-size: 19px;
+      padding: 0px;
+      color: rgb(137, 138, 139);
+
+      &:focus {
+        border: none;
+        background: none;
+        outline: none;
+      }
+
+      &:hover {
+        outline: none;
+      }
+
+      &::placeholder {
+        font-size: 15px;
+        position: absolute;
+        top: 5px;
+        left: 0px;
+        padding-right: 10px;
+      }
+    }
+
+    .profile-avatar-container {
+      position: absolute;
+      border-radius: 90px;
+      width: 285px;
+      height: 303px;
+      left: 99px;
+      top: 54px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 199px;
+        margin-left: 2px;
+        border-radius: 100px;
+      }
+
+      .profile-avatar {
+        width: 100%;
+        border-radius: 200px;
+        height: auto;
+      }
+    }
+
+    .Name-Surname-Form {
+      position: absolute;
+      left: 422px;
+      top: 51px;
+
+      h1 {
+        text-decoration: underline;
+      }
+    }
+
+    // .button {
+    //   position: absolute;
+    //   margin-left: 68px;
+    //   margin-top: 274px;
+    //   transition: all 0.3s ease-in-out;
+    //   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    //   padding-block: 0.5rem;
+    //   padding-inline: 1.25rem;
+    //   background: linear-gradient(45deg, rgb(16, 137, 211) 0%, rgb(18, 177, 209) 100%);
+    //   border-radius: 9999px;
+    //   display: flex;
+    //   align-items: center;
+    //   justify-content: center;
+    //   color: white;
+    //   gap: 10px;
+    //   font-weight: bold;
+    //   border: 3px solid rgba(255, 255, 255, 0.3019607843);
+    //   outline: none;
+    //   overflow: hidden;
+    //   font-size: 15px;
+    // }
+
+    // .icon {
+    //   width: 24px;
+    //   height: 24px;
+    //   transition: all 0.3s ease-in-out;
+    // }
+
+    // .button:hover {
+    //   transform: scale(1.05);
+    //   border-color: #fff9;
+    // }
+
+    // .button:hover .icon {
+    //   transform: translate(4px);
+    // }
+
+    // .button:hover::before {
+    //   animation: shine 1.5s ease-out infinite;
+    // }
+
+    // .button::before {
+    //   content: '';
+    //   position: absolute;
+    //   width: 100px;
+    //   height: 100%;
+    //   background-image: linear-gradient(
+    //     120deg,
+    //     rgba(255, 255, 255, 0) 30%,
+    //     rgba(255, 255, 255, 0.8),
+    //     rgba(255, 255, 255, 0) 70%
+    //   );
+    //   top: 0;
+    //   left: -100px;
+    //   opacity: 0.6;
+    // }
+
+    // @keyframes shine {
+    //   0% {
+    //     left: -100px;
+    //   }
+
+    //   60% {
+    //     left: 100%;
+    //   }
+
+    //   to {
+    //     left: 100%;
+    //   }
+    // }
+
+    // .card {
+    //   box-sizing: border-box;
+    //   width: 285px;
+    //   margin: 100px;
+    //   height: 392px;
+    //   background: rgba(217, 217, 217, 0.58);
+    //   border: 2px solid white;
+    //   box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+    //   -webkit-backdrop-filter: blur(6px);
+    //   backdrop-filter: blur(6px);
+    //   border-radius: 17px;
+    //   text-align: center;
+    //   cursor: pointer;
+    //   transition: all 0.5s;
+    //   display: flex;
+    //   align-items: center;
+    //   justify-content: center;
+    //   -webkit-user-select: none;
+    //   user-select: none;
+    //   font-weight: bolder;
+    //   color: black;
+
+    //   &:hover {
+    //     border: 1px solid black;
+    //     transform: scale(1.05);
+    //   }
+
+    //   &:active {
+    //     transform: scale(0.95) rotateZ(1.7deg);
+    //   }
+    // }
+  }
+}

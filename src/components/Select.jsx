@@ -3,14 +3,20 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { setTrue } from './redux/slices/OpenCart.slice';
+import { setOpenAccaunt } from './redux/slices/openAccaunt.slice';
+import { useMediaQuery } from '@mui/material';
 
 export default function SelectVariants() {
   const [age, setAge] = React.useState('');
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  const handleOpenCart = () => {
+    dispatch(setTrue());
+  };
 
   const handleChange = (event) => {
     setAge(event.target.value);
@@ -40,6 +46,8 @@ export default function SelectVariants() {
     navigate('/Menu/Our/Artists');
   };
 
+  const mobileWidth = useMediaQuery('(max-width: 500px)');
+
   return (
     <div className="Select">
       <FormControl variant="filled" sx={{ m: 1, minWidth: 230 }}>
@@ -55,6 +63,12 @@ export default function SelectVariants() {
           <MenuItem onClick={backFn} value="">
             <em>Назад</em>
           </MenuItem>
+          {mobileWidth && (
+            <main>
+              <MenuItem onClick={handleOpenCart}>Корзина</MenuItem>
+              <MenuItem onClick={() => dispatch(setOpenAccaunt())}>Наша страница</MenuItem>
+            </main>
+          )}
           <MenuItem onClick={popularFn} value={10}>
             Популярные
           </MenuItem>

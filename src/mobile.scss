@@ -1106,6 +1106,62 @@
       top: 83px;
     }
   }
+  .Login-Main {
+    .login-wrapper {
+      .container {
+        max-width: 258px !important;
+      }
+      .input {
+        width: 210px !important;
+      }
+    }
+  }
+
+  .Phone-Number-Main {
+    .next-button {
+      left: 58px !important;
+    }
+    .phone-number-wrapper {
+      h1 {
+        position: absolute;
+        margin-top: 81px !important;
+        font-size: 27px;
+      }
+    }
+  }
+
+  .registration-wrapper {
+    // width: 454px !important;
+    width: 395px !important;
+    height: 800px;
+
+    .registration-form {
+      .container {
+        max-width: 262px !important;
+
+        .input {
+          width: 215px !important;
+        }
+      }
+    }
+
+    .button {
+      display: none !important;
+    }
+
+    .avatar-container {
+      display: none !important;
+      img {
+        display: none;
+      }
+    }
+  }
+
+  .Profile-Main {
+    .profile-wrapper {
+      height: 620px !important;
+    }
+  }
 }
 
 @media (max-width: 1100px) {

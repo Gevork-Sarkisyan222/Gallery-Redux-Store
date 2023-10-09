@@ -11,24 +11,27 @@ import BakeryDiningIcon from '@mui/icons-material/BakeryDining';
 import Modal from '@mui/joy/Modal';
 import ModalClose from '@mui/joy/ModalClose';
 import Sheet from '@mui/joy/Sheet';
-import PermContactCalendarIcon from '@mui/icons-material/PermContactCalendar';
+import StreetviewIcon from '@mui/icons-material/Streetview';
+import { useDispatch, useSelector } from 'react-redux';
+import { setOpenAccaunt, setCloseAccaunt } from './redux/slices/openAccaunt.slice';
 
 function Accaunt() {
-  const [open, setOpen] = React.useState(false);
+  const openAccaunt = useSelector((state) => state.openAccaunt.openAccaunt);
+  const dispatch = useDispatch();
 
   return (
     <div className="Accaunt-Main">
       <React.Fragment>
         <Button
-          sx={{ position: 'fixed', top: '14px', right: '24px', zIndex: '1500' }}
+          sx={{ position: 'fixed', top: '14px', right: '90px', zIndex: '1500' }}
           color="inherit">
-          <PermContactCalendarIcon onClick={() => setOpen(true)} sx={{ color: 'white' }} />
+          <StreetviewIcon onClick={() => dispatch(setOpenAccaunt())} sx={{ color: 'white' }} />
         </Button>
         <Modal
           aria-labelledby="modal-title"
           aria-describedby="modal-desc"
-          open={open}
-          onClose={() => setOpen(false)}
+          open={openAccaunt}
+          onClose={() => dispatch(setCloseAccaunt())}
           sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
           <Sheet
             variant="outlined"
@@ -92,7 +95,7 @@ function Accaunt() {
                     Перейти
                   </Button>
                 </a>
-                <Button onClick={() => setOpen(false)} variant="plain" color="neutral">
+                <Button onClick={() => dispatch(setCloseAccaunt())} variant="plain" color="neutral">
                   Пропустить
                 </Button>
               </CardActions>
