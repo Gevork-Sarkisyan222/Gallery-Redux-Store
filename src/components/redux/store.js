@@ -13,6 +13,7 @@ import nameValue from './slices/inputs/nameValue.slice';
 import surnameValue from './slices/inputs/surnameValue.slice';
 import emailValue from './slices/inputs/emailValue.slice';
 import openAccaunt from './slices/openAccaunt.slice';
+import favoriteItems from './slices/Favorite.slice';
 
 export const store = configureStore({
   reducer: {
@@ -30,5 +31,6 @@ export const store = configureStore({
     surnameValue,
     emailValue,
     openAccaunt,
+    favoriteItems,
   },
 });

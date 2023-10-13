@@ -17,14 +17,17 @@ import {
 } from '../components/redux/slices/IsChecked.slice';
 import { useMediaQuery } from '@mui/material';
 import { setOpenInfo } from './redux/slices/OpenImageInfo.slice';
+import FavoriteIcon from '@mui/icons-material/FavoriteBorder';
+import FavoriteCheckedIcon from '@mui/icons-material/Favorite';
+import { addFavoriteItems, removeFavoriteItems } from './redux/slices/Favorite.slice';
 
-export default function ImageCard({ title, year, image, price, info, id, onPlus, onDelete }) {
-  // const [open, setOpen] = useState(false);
+export default function ImageCard({ title, year, image, price, info, id }) {
   const dispatch = useDispatch();
-  // const [isChecked, setIsChecked] = useState(() => {
-  //   const storedValue = localStorage.getItem(`isChecked-${id}`);
-  //   return storedValue !== null ? JSON.parse(storedValue) : false;
-  // });
+  const [isCheckedFavorite, setIsCheckedFavorite] = useState(() => {
+    const storedValue = localStorage.getItem(`favoriteChecked-${id}`);
+    return storedValue ? JSON.parse(storedValue) : false;
+  });
+
   const isChecked = useSelector((state) => state.isChecked.isChecked[id]);
   const openInfo = useSelector((state) => state.openInfoCard.openInfo[id]);
   const { enqueueSnackbar } = useSnackbar();
@@ -32,11 +35,11 @@ export default function ImageCard({ title, year, image, price, info, id, onPlus,
   const isSmallScreen = useMediaQuery('(max-width:550px)');
   const cardWidth = isSmallScreen ? 190 : 270;
 
-  // React.useEffect(() => {
-  //   const checkedJson = JSON.stringify(isChecked);
-  //   console.log(checkedJson);
-  //   localStorage.setItem(`isChecked-${id}`, checkedJson);
-  // }, [isChecked, id]);
+  useEffect(() => {
+    const favoriteChecked = JSON.stringify(isCheckedFavorite);
+    localStorage.setItem(`favoriteChecked-${id}`, favoriteChecked);
+    console.log(favoriteChecked);
+  }, [isCheckedFavorite]);
 
   useEffect(() => {
     dispatch(initializeStateFromLocalStorage());
@@ -56,22 +59,49 @@ export default function ImageCard({ title, year, image, price, info, id, onPlus,
     };
     dispatch(addItem(items));
     enqueueSnackbar('Товар добавлен в корзину!', { variant: 'success' });
+    localStorage.setItem(`favoriteChecked-${id}`, JSON.stringify(true));
   };
 
   const handleDelete = () => {
     dispatch(minus());
 
     dispatch(setIsChecked({ id, value: false }));
-    // setIsChecked(false);
     dispatch(removeItem(id));
-    // onDelete();
     enqueueSnackbar('Товар удален из корзины!', { variant: 'error' });
+    localStorage.setItem(`favoriteChecked-${id}`, JSON.stringify(false));
+  };
+
+  const handleMakeAddFavoriteIcon = (obj) => {
+    const fromFavoriteItems = {
+      title,
+      year,
+      image,
+      price,
+      id,
+    };
+    setIsCheckedFavorite(true);
+    dispatch(addFavoriteItems(fromFavoriteItems));
+  };
+
+  const handleRemoveFavoriteIcon = () => {
+    setIsCheckedFavorite(false);
+    dispatch(removeFavoriteItems(id));
   };
 
   return (
     <div>
       <Card variant="outlined" sx={{ width: cardWidth }}>
         <div>
+          {/* <Button
+            variant="outlined"
+            size="small"
+            sx={{ marginLeft: '230px', color: 'red', borderColor: 'red' }}>
+            {isCheckedFavorite ? (
+              <FavoriteCheckedIcon onClick={handleRemoveFavoriteIcon} />
+            ) : (
+              <FavoriteIcon onClick={handleMakeAddFavoriteIcon} />
+            )}
+          </Button> */}
           <Typography level="title-lg">{title}</Typography>
           <Typography level="body-sm">{year}</Typography>
         </div>

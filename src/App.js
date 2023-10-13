@@ -31,6 +31,9 @@ import SaitInfo from './components/pages/SaitInfo';
 // page-profile
 import Profile from './components/pages/profile/Profile';
 
+// favorite page
+import Favorite from './components/pages/favorite/Favorite';
+
 function App() {
   const mobileWidth = useMediaQuery('(max-width: 500px)');
   const isTrue = useSelector((state) => state.openCart.isTrue);
@@ -53,6 +56,7 @@ function App() {
           {!(
             location.pathname === '/Write/Phone-Number' ||
             location.pathname === '/Accaunt/Profile' ||
+            location.pathname === '/Favorite/Items' ||
             location.pathname === '/Login'
           ) && (
             <div>
@@ -73,6 +77,7 @@ function App() {
             <Route path="/Order/Picture" element={<Order />} />
             <Route path="/Accaunt/Profile" element={<Profile />} />
             <Route path="/Write/Phone-Number" element={<PhoneNumberReg />} />
+            <Route path="/Favorite/Items" element={<Favorite />} />
             <Route
               path="/Menu/Our/Artists"
               element={

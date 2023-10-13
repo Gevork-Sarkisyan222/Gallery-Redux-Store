@@ -19,6 +19,7 @@ import Avatar from '@mui/material/Avatar';
 import { setChangeAvatar, setDeleteAvatar } from './redux/slices/Avatar.slice';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
+import FavoriteIcon from '@mui/icons-material/FavoriteBorder';
 
 // actions
 import { setNameValue } from './redux/slices/inputs/nameValue.slice';
@@ -47,6 +48,10 @@ export default function ButtonAppBar() {
       navigate('/Login');
       dispatch(setDeleteAvatar());
     }
+  };
+
+  const handleWentFavorite = () => {
+    navigate('/Favorite/Items');
   };
 
   const handleOpenProfile = () => {
@@ -115,6 +120,22 @@ export default function ButtonAppBar() {
             sx={{ flexGrow: 1, fontWeight: fontWeights, fontSize: fontSizes }}>
             Магазин Галереи-<span style={{ color: 'yellow' }}>топ картинки здесь</span>
           </Typography>
+
+          {/* {!(
+            location.pathname === '/Login' ||
+            location.pathname === '/Write/Phone-Number' ||
+            location.pathname === '/Accaunt/Profile' ||
+            location.pathname === '/Registration'
+          ) &&
+            !isSmallScreen450 && (
+              <Button
+                onClick={handleWentFavorite}
+                sx={{ position: 'relative', right: '36px' }}
+                color="inherit">
+                <FavoriteIcon />
+              </Button>
+            )} */}
+
           {!(
             location.pathname === '/Login' ||
             location.pathname === '/Write/Phone-Number' ||
